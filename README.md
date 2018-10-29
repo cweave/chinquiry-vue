@@ -1,5 +1,5 @@
 # chinquiry-vue
-Rewriting <a href="https://chinquiry.com/" target="_blank" title="Chinquiry website - Chinchilla care information">chinquiry.com</a> in Vue.js. Also making in responsive. 
+Rewriting <a href="https://chinquiry.com/" target="_blank" title="Chinquiry website - Chinchilla care information">chinquiry.com</a> in Vue.js. Also making the website responsive. 
 
 ## Project setup
 ```
