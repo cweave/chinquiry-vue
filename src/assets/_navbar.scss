@@ -1,0 +1,32 @@
+nav {
+
+	ul {
+		display: flex;
+		justify-content: center;
+		padding: 0;
+
+		li {
+			display: inline-block;
+
+			a {
+				text-decoration: none;
+				font-size: 1.25em;
+				font-weight: 800;
+				color: lighten($primary-color, 10%);
+				padding: 14px 18px;
+
+				&:hover,
+				&:active {
+					background-color: lighten($primary-color, 50%);
+					color: darken($primary-color, 10%);
+				}
+
+				&.router-link-exact-active, 
+				&.router-link-active {
+					background-color: lighten($primary-color, 50%);
+					color: darken($primary-color, 10%);
+				}
+			}
+		}
+	}
+}

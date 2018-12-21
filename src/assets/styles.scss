@@ -1,0 +1,55 @@
+@import '_variables';
+@import '_default';
+@import '_navbar';
+
+
+main {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+
+	header {		
+		background: url('./images/background.jpg') no-repeat 50% 35%;
+		background-size: cover;
+		height: 35vh;
+
+		.overlay {
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.2);
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			align-items: center;
+		}
+
+		.title {
+			font-size: 5em;
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
+			margin-bottom: -0.05em;
+			text-shadow: 0 1px 2px lighten($white, 40%);
+			
+
+			@media screen and (max-width: 600px) {
+				font-size: 4em;
+			}
+
+			@media screen and (max-width: 480px) {
+				font-size: 3em;
+				letter-spacing: 0;
+			}
+		}
+
+		.sub-title {
+			color: $white;
+			letter-spacing: 0.15em;
+			text-shadow: 0 1px 2px lighten($black, 40%);
+			text-align: center;
+		}
+	}
+}
+
+.definition {
+	margin: 0 2em;
+}

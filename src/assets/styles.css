@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css?family=Muli:400,800,900");
+body {
+  margin: 0;
+  background-color: #fafafa;
+  font: 18px/1.35em 'Muli', 'Helvetica', sans-serif;
+  color: #333333;
+}
+
+section {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 2em;
+}
+
+footer {
+  background-color: #6a7976;
+  color: #fafafa;
+  text-align: center;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 2em;
+  color: #6a7976;
+}
+
+h2 {
+  color: #619d8c;
+  font-size: 1.5em;
+}
+
+h3 {
+  color: #A19FA0;
+  font-size: 1.25em;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 1.25em;
+  font-weight: 800;
+  color: #839390;
+  padding: 14px 18px;
+}
+
+nav ul li a:hover, nav ul li a:active {
+  background-color: #f0f2f2;
+  color: #525e5b;
+}
+
+nav ul li a.router-link-exact-active, nav ul li a.router-link-active {
+  background-color: #f0f2f2;
+  color: #525e5b;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+}
+
+main header {
+  background: url("./images/background.jpg") no-repeat 50% 35%;
+  background-size: cover;
+  height: 35vh;
+}
+
+main header .overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main header .title {
+  font-size: 5em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: -0.05em;
+  text-shadow: 0 1px 2px white;
+}
+
+@media screen and (max-width: 600px) {
+  main header .title {
+    font-size: 4em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main header .title {
+    font-size: 3em;
+    letter-spacing: 0;
+  }
+}
+
+main header .sub-title {
+  color: #fafafa;
+  letter-spacing: 0.15em;
+  text-shadow: 0 1px 2px #999999;
+  text-align: center;
+}
+
+.definition {
+  margin: 0 2em;
+}
+/*# sourceMappingURL=styles.css.map */
