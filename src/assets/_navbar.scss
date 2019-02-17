@@ -1,32 +1,174 @@
-nav {
+.navbar {
+	position: relative;
+    min-height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-	ul {
-		display: flex;
-		justify-content: center;
-		padding: 0;
+	&-container {
+		display: block;
+		background-color: $primary-color;
+		padding: 0 15px;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+	}
+
+	&-hamburger {
+		display: none;
+	}
+
+  	@media screen and (max-width: 575px) {
+
+		&-hamburger {
+			display: inline;
+			background: transparent;
+			border: 0;
+			@include rem(margin-top, 10px);
+
+			span {
+				display: block;
+				width: 33px;
+				height: 4px;
+				margin-bottom: 5px;
+				position: relative;
+				background: #cdcdcd;
+				border-radius: 3px;
+				z-index: 1;
+				transform-origin: 4px 0px;
+				transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease;
+
+				&:first-child {
+					transform-origin: 0% 0%;
+				}
+
+				&:nth-last-child(2)	{
+					transform-origin: 0% 100%;
+				}
+			}
+		}
+	}
+
+	&-links {
 
 		li {
 			display: inline-block;
+			position: relative;
 
 			a {
 				text-decoration: none;
 				font-size: 1.25em;
 				font-weight: 800;
-				color: lighten($primary-color, 10%);
+				color: $white;
 				padding: 14px 18px;
+				position: relative;
 
-				&:hover,
-				&:active {
-					background-color: lighten($primary-color, 50%);
-					color: darken($primary-color, 10%);
+				&:before {
+					content: "";
+					position: absolute;
+					width: 100%;
+					height: 2px;
+					bottom: 0;
+					left: 0;
+					background: darken($white, 15%);
+					visibility: hidden;
+					border-radius: 5px;
+					transform: scaleX(0);
+					transition: .25s linear;
 				}
 
-				&.router-link-exact-active, 
+				&:hover:before,
+				&:focus:before,
+				&:active,
+				&.router-link-exact-active,
 				&.router-link-active {
-					background-color: lighten($primary-color, 50%);
-					color: darken($primary-color, 10%);
+					visibility: visible;
+					transform: scaleX(1);
 				}
 			}
 		}
 	}
+
+	&-sublinks {
+		display: none;
+		position: absolute;
+		width: auto;
+		height: auto;
+		top: 40px;
+		left: 0;
+		margin: 0;
+		padding: 0;
+		background-color: $primary-color;
+		box-shadow: 2px 2px rgba(0,0,0,0.2);
+
+		li {
+			width: 100%;
+			display: block;
+
+			a {
+				display: block;
+				padding: 10px 14px;
+				@include rem(margin, 5px);
+			}
+		}
+	}
+
+	&-links li:hover &-sublinks,
+	&-links li:active &-sublinks {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 870px) {
+  .navbar {
+
+
+    &_links {
+      float: none;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      max-width: 400px;
+      margin: 0 auto;
+
+      li {
+
+        &:first-child {
+          a {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .navbar {
+
+
+    &-links {
+	  //display: none;
+	  display: flex;
+      flex-direction: column;
+
+      li {
+        a {
+          padding: 10px 10px 10px 0 !important;
+        }
+      }
+    }
+
+    &-sublinks {
+      display: block;
+      position: static;
+      box-shadow: none;
+      width: 100%;
+      padding-left: 15px;
+      background-color: darken($primary-color, 5%);
+
+      li:first-child {
+        margin-top: 0;
+      }
+    }
+  }
 }
