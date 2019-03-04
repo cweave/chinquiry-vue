@@ -1,9 +1,7 @@
 .navbar {
 	position: relative;
     min-height: 75px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
 
 	&-container {
 		display: block;
@@ -12,37 +10,83 @@
 		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
 	}
 
-	&-hamburger {
+	&-hamburger,
+	&-mobile {
 		display: none;
 	}
 
-  	@media screen and (max-width: 575px) {
+  	@media screen and (max-width: 824px) {
+
+		&-desktop {
+			display: none;
+		}
+
+		&-mobile {
+			display: flex;
+			justify-content: flex-start;
+		}
 
 		&-hamburger {
 			display: inline;
 			background: transparent;
+			position: relative;
 			border: 0;
-			@include rem(margin-top, 10px);
+			width: 50px;
+			height: 30px;
 
 			span {
 				display: block;
-				width: 33px;
-				height: 4px;
-				margin-bottom: 5px;
-				position: relative;
+				width: 50px;
+				height: 6px;
+				position: absolute;
+				left: 0;
 				background: #cdcdcd;
-				border-radius: 3px;
-				z-index: 1;
-				transform-origin: 4px 0px;
-				transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease;
+				border-radius: 4px;
+				transition: all 0.4s;
 
-				&:first-child {
-					transform-origin: 0% 0%;
+				&:nth-of-type(1) {
+					top: 0;
 				}
 
-				&:nth-last-child(2)	{
-					transform-origin: 0% 100%;
+				&:nth-of-type(2) {
+					top: 50%;
 				}
+
+				&:nth-of-type(3) {
+					top: 100%;
+				}
+			}
+
+			&:hover,
+			&:focus {
+				&:nth-of-type(1) {
+					transform: translateY(8px / 2 * -1);
+				}
+
+				&:nth-of-type(3) {
+					 transform: translateY(8px / 2);
+				}
+			}
+
+			&.close {
+
+				span {
+
+					&:nth-of-type(1) {
+						transform:rotate(45deg);
+						top:49%;
+					}
+
+					&:nth-of-type(2) {
+						opacity: 0;
+					}
+
+					&:nth-of-type(3) {
+						transform:rotate(-45deg);
+						top:49%;
+					}
+				}
+
 			}
 		}
 	}

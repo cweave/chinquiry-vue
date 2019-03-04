@@ -13,32 +13,34 @@ export default new Router({
 	routes: [
 		{
 			path: '/',
-			name: 'home',
+			name: 'Home',
 			component: Home
 		},
 		{
 			path: '/cage-and-habitat',
-			name: 'cage-and-habitat',
-			component: CageHabitat
+			name: 'Cage & Habitat',
+			component: CageHabitat,
+			children: [
+				{
+					path: '/litter-training',
+					name: 'Litter Training',
+					component: LitterTraining
+				}
+			]
 		},
 		{
 			path: '/food-and-treats',
-			name: 'food-and-treats',
+			name: 'Food & Treats',
 			component: FoodTreats
 		},
 		{
 			path: '/dust-baths',
-			name: 'dust-baths',
+			name: 'Dust Baths',
 			component: DustBath
 		},
 		{
-			path: '/litter-training',
-			name: 'litter-training',
-			component: LitterTraining
-		},
-		{
 			path: '/chinchilla-toys',
-			name: 'chinchilla-toys',
+			name: 'Chinchilla Toys',
 			component: ChinchillaToys
 		}
 	]
