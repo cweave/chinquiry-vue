@@ -7,7 +7,8 @@
 		display: block;
 		background-color: $primary-color;
 		padding: 0 15px;
-		box-shadow: 0 5px 10px rgba($black, 0.4);
+		box-shadow: 0 5px 10px rgba($black, 0.4);		
+		transition: all 0.4s;
 	}
 
 	&-hamburger {

@@ -10,7 +10,7 @@
 
 		<div class="navbar-container">
 			<nav class="navbar">
-				<button class="navbar-hamburger" :class="{close: menuOpen}" @click="menuOpen=!menuOpen">
+				<button class="navbar-hamburger" id="toggle-nav" :class="{close: menuOpen}" @click="menuOpen=!menuOpen" ref="nav-toggle">
 					<span></span>
 					<span></span>
 					<span></span>
@@ -64,7 +64,7 @@ export default {
 		toggle: function () {
 	 		this.menuOpen = !this.menuOpen
 		},
-		winWidth: function () {
+		winWidth() {
 			const width = window.innerWidth;
 			if (width <= 824) {
 				this.menuOpen = false
