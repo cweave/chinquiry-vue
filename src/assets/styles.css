@@ -2,7 +2,7 @@
 body {
   margin: 0;
   background-color: #fafafa;
-  font: 18px/1.35em "Muli", "Helvetica", sans-serif;
+  font: 18px/1.15 "Muli", "Helvetica", sans-serif;
   color: #333333;
 }
 
@@ -75,7 +75,7 @@ h3 {
   display: block;
   background-color: #6a7976;
   padding: 0 15px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 5px 10px rgba(51, 51, 51, 0.4);
 }
 .navbar-hamburger {
   display: none;
@@ -133,31 +133,25 @@ h3 {
   display: inline-block;
   position: relative;
 }
-@media screen and (max-width: 824px) {
-  .navbar-links li {
-    display: block;
-    /* 3 */
-    /* 3 */
-    /* 4 */
-    /* 6 */
-    /* 6 */
-    /* 7 */
-    /* 4 */
-    /* 6 */
-    /* 6 */
-    /* 7 */
-    padding: 4px 6px;
-    /* 9 */
-    padding: 0.4rem 0.6rem;
-    /* 9 */
-  }
-}
 .navbar-links li a {
   text-decoration: none;
   font-size: 1.25em;
   font-weight: 800;
   color: #fafafa;
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
   padding: 14px 18px;
+  /* 9 */
+  padding: 1.4rem 1.8rem;
+  /* 9 */
   position: relative;
 }
 .navbar-links li a:before {
@@ -177,17 +171,36 @@ h3 {
   visibility: visible;
   transform: scaleX(1);
 }
+@media screen and (max-width: 824px) {
+  .navbar-links li {
+    display: block;
+    /* 3 */
+    /* 3 */
+    /* 4 */
+    /* 6 */
+    /* 6 */
+    /* 7 */
+    /* 4 */
+    /* 6 */
+    /* 6 */
+    /* 7 */
+    padding: 4px 6px;
+    /* 9 */
+    padding: 0.4rem 0.6rem;
+    /* 9 */
+  }
+}
 .navbar-sublinks {
   display: none;
   position: absolute;
   width: auto;
   height: auto;
-  top: 40px;
+  top: 50px;
   left: 0;
   margin: 0;
   padding: 0;
   background-color: #6a7976;
-  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px rgba(51, 51, 51, 0.2);
 }
 .navbar-sublinks li {
   width: 100%;
@@ -195,7 +208,20 @@ h3 {
 }
 .navbar-sublinks li a {
   display: block;
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
   padding: 10px 14px;
+  /* 9 */
+  padding: 1rem 1.4rem;
+  /* 9 */
   /* 3 */
   /* 3 */
   /* 4 */
@@ -207,6 +233,47 @@ h3 {
   margin: 0.5rem;
   /* 9 */
 }
+@media screen and (max-width: 824px) {
+  .navbar-sublinks li a {
+    margin: 0;
+    /* 3 */
+    /* 3 */
+    /* 4 */
+    /* 6 */
+    /* 6 */
+    /* 7 */
+    /* 4 */
+    /* 6 */
+    /* 6 */
+    /* 7 */
+    padding: 4px 6px;
+    /* 9 */
+    padding: 0.4rem 0.6rem;
+    /* 9 */
+  }
+}
+@media screen and (max-width: 824px) {
+  .navbar-sublinks {
+    display: block;
+    box-shadow: none;
+    position: relative;
+    top: 0;
+    /* 3 */
+    /* 3 */
+    /* 4 */
+    /* 6 */
+    /* 6 */
+    /* 7 */
+    /* 4 */
+    /* 6 */
+    /* 6 */
+    /* 7 */
+    padding: 4px 6px;
+    /* 9 */
+    padding: 0.4rem 0.6rem;
+    /* 9 */
+  }
+}
 .navbar-links li:hover .navbar-sublinks, .navbar-links li:active .navbar-sublinks {
   display: block;
 }
@@ -215,6 +282,21 @@ header {
   background: url("./images/background.jpg") no-repeat 50% 35%;
   background-size: cover;
   height: 35vh;
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  letter-spacing: 3px;
+  /* 9 */
+  letter-spacing: 0.3rem;
+  /* 9 */
+}
+@media screen and (max-width: 824px) {
+  header {
+    letter-spacing: 0;
+  }
 }
 header .overlay {
   width: 100%;
@@ -227,35 +309,45 @@ header .overlay {
   justify-content: flex-end;
 }
 header .title {
-  font-size: 5em;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: -0.05em;
-  text-shadow: 0 1px 2px white;
-}
-@media screen and (max-width: 600px) {
-  header .title {
-    font-size: 4em;
-  }
-}
-@media screen and (max-width: 480px) {
-  header .title {
-    font-size: 3em;
-    letter-spacing: 0;
-  }
-}
-header .sub-title {
-  color: #fafafa;
   /* 3 */
   /* 3 */
   /* 4 */
   /* 6 */
   /* 6 */
   /* 7 */
-  letter-spacing: 3px;
+  margin-bottom: -25px;
   /* 9 */
-  letter-spacing: 0.3rem;
+  margin-bottom: -2.5rem;
   /* 9 */
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  font-size: 48px;
+  /* 9 */
+  font-size: 4.8rem;
+  /* 9 */
+  text-shadow: 0 1px 2px white;
+}
+@media screen and (max-width: 824px) {
+  header .title {
+    /* 3 */
+    /* 3 */
+    /* 4 */
+    /* 6 */
+    /* 6 */
+    /* 7 */
+    font-size: 36px;
+    /* 9 */
+    font-size: 3.6rem;
+    /* 9 */
+  }
+}
+header .sub-title {
+  color: #fafafa;
   text-shadow: 0 1px 2px #999999;
   text-align: center;
 }

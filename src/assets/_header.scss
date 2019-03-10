@@ -2,6 +2,11 @@ header {
 	background: url('./images/background.jpg') no-repeat 50% 35%;
 	background-size: cover;
 	height: 35vh;
+	@include rem(letter-spacing, 3px);
+
+	@media screen and (max-width: 824px) {
+		letter-spacing: 0;
+	}
 
 	.overlay {
 		width: 100%;
@@ -13,26 +18,18 @@ header {
 	}
 
 	.title {
-		font-size: 5em;
 		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		margin-bottom: -0.05em;
+		@include rem(margin-bottom, -25px);
+		@include rem(font-size, 48px);
 		text-shadow: 0 1px 2px lighten($white, 40%);
 
-
-		@media screen and (max-width: 600px) {
-			font-size: 4em;
-		}
-
-		@media screen and (max-width: 480px) {
-			font-size: 3em;
-			letter-spacing: 0;
+		@media screen and (max-width: 824px) {
+			@include rem(font-size, 36px);
 		}
 	}
 
 	.sub-title {
-		color: $white;
-		@include rem(letter-spacing, 3px);
+		color: $white;		
 		text-shadow: 0 1px 2px lighten($black, 40%);
 		text-align: center;
 	}

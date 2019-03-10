@@ -65,8 +65,8 @@ export default {
 	 		this.menuOpen = !this.menuOpen
 		},
 		winWidth: function () {
-			let w = window.innerWidth;
-			if (w <= 824) {
+			const width = window.innerWidth;
+			if (width <= 824) {
 				this.menuOpen = false
 			}
 		}

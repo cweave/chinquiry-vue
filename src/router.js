@@ -43,7 +43,7 @@ const router = new Router({
 			name: 'Food & Treats',
 			component: FoodTreats,
 			meta: {
-				title: 'Food & Treats- Chinquiry'
+				title: 'Food & Treats - Chinquiry'
 			},
 		},
 		{
