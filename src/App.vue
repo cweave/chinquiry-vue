@@ -47,6 +47,9 @@ import '@/assets/styles.css';
 
 export default {
 	name: 'app',
+	created () {
+		document.title = 'Chinquiry - Chinchilla Care Information'
+	},
 	components: {
 		Home
 	},
@@ -72,7 +75,10 @@ export default {
 		}
 	},
 	mounted() {
-		this.winWidth()
+		this.winWidth(),
+		
+		document.querySelectorAll('.navbar-links li').addEventListener('click', function () {
+		});
 	}
 }
 </script>
