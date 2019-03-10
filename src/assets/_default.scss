@@ -13,13 +13,6 @@ section {
 	padding: 2em;
 }
 
-footer {
-	background-color: $primary-color;
-	color: $white;
-	height: 100%;
-	@include flex-center;
-}
-
 h1 {
 	font-weight: 900;
 	@include rem(font-size, 32px);
@@ -34,4 +27,42 @@ h2 {
 h3 {
 	color: $tertiary-color;
 	@include rem(font-size, 22px);
+}
+a {
+	text-decoration: none;
+	position: relative;
+
+	&:hover,
+	&:focus,
+	&:active,
+	&.router-link-exact-active,
+	&.router-link-active {
+		font-style: italic;
+		text-decoration: underline;
+	}
+
+	@media screen and (min-width: 824px) {
+		&:before {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			bottom: 0;
+			left: 0;
+			background: darken($white, 15%);
+			visibility: hidden;
+			border-radius: 5px;
+			transform: scaleX(0);
+			transition: .25s linear;
+		}
+
+		&:hover:before,
+		&:focus:before,
+		&:active,
+		&.router-link-exact-active,
+		&.router-link-active {
+			visibility: visible;
+			transform: scaleX(1);
+		} 
+	}
 }

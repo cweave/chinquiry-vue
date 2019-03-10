@@ -1,0 +1,21 @@
+footer {
+	background-color: $primary-color;
+	color: $white;
+	height: 100%;
+	@include flex-center;
+	flex-direction: column;
+	@include rem(padding, 10px);
+
+	.footer-navigation {
+
+		ul {
+			list-style: none;
+
+			a {
+				@include rem(font-size, 12px);
+				color: $white;
+				@include rem(padding, 14px 18px);
+			}
+		}
+	}
+}

@@ -6,10 +6,11 @@ import FoodTreats from './components/FoodTreats.vue'
 import DustBath from './components/DustBath.vue'
 import LitterTraining from './components/LitterTraining.vue'
 import ChinchillaToys from './components/ChinchillaToys.vue'
+import Disclaimer from './components/Disclaimer.vue'
 
 Vue.use(Router)
 
-const router = new Router({	
+const router = new Router({
 	mode: 'history',
 	routes: [
 		{
@@ -17,7 +18,8 @@ const router = new Router({
 			name: 'Home',
 			component: Home,
 			meta: {
-				title: 'Chinchilla Care Information - Chinquiry'
+				title: 'Chinchilla Care Information - Chinquiry',
+				mainNav: true
 			}
 		},
 		{
@@ -25,25 +27,29 @@ const router = new Router({
 			name: 'Cage & Habitat',
 			component: CageHabitat,
 			meta: {
-				title: 'Cage & Habitat - Chinquiry'
-			},
-			children: [
-				{
-					path: '/litter-training',
-					name: 'Litter Training',
-					component: LitterTraining,
-					meta: {
-						title: 'Litter Training - Chinquiry'
-					},
-				}
-			]
+				title: 'Cage & Habitat - Chinquiry',
+				mainNav: true
+			}
+			// TODO: fix routing
+			// ,
+			// children: [
+			// 	{
+			// 		path: 'litter-training',
+			// 		name: 'Litter Training',
+			// 		component: LitterTraining,
+			// 		meta: {
+			// 			title: 'Litter Training - Chinquiry'
+			// 		},
+			// 	}
+			// ]
 		},
 		{
 			path: '/food-and-treats',
 			name: 'Food & Treats',
 			component: FoodTreats,
 			meta: {
-				title: 'Food & Treats - Chinquiry'
+				title: 'Food & Treats - Chinquiry',
+				mainNav: true
 			},
 		},
 		{
@@ -51,7 +57,8 @@ const router = new Router({
 			name: 'Dust Baths',
 			component: DustBath,
 			meta: {
-				title: 'Dust Baths - Chinquiry'
+				title: 'Dust Baths - Chinquiry',
+				mainNav: true
 			},
 		},
 		{
@@ -59,9 +66,20 @@ const router = new Router({
 			name: 'Chinchilla Toys',
 			component: ChinchillaToys,
 			meta: {
-				title: 'Chinchilla Toys - Chinquiry'
+				title: 'Chinchilla Toys - Chinquiry',
+				mainNav: true
+			},
+		},
+		{
+			path: '/disclaimer',
+			name: 'Disclaimer',
+			component: Disclaimer,
+			meta: {
+				title: 'Disclaimer - Chinquiry',
+				footerNav: true
 			},
 		}
 	]
 });
+
 export default router;

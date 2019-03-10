@@ -16,13 +16,13 @@
 					<span></span>
 				</button>
 				<ul class="navbar-links" v-show="menuOpen">
-					<li v-for="parent in $router.options.routes" :key="parent.path">
+					<li v-for="parent in routerLoop" :key="parent.path" v-if="parent.meta.mainNav">
 						<router-link :to="parent.path" exact>
 							{{ parent.name }}
 						</router-link>
-						<ul class="navbar-sublinks">
+						<ul class="navbar-sublinks" v-if="parent.children">
 							<li v-for="child in parent.children" :key="child.path">
-								<router-link :to="child.path" exact>
+								<router-link :to="{path : parent.path + '/' + child.path}" exact>
 									{{ child.name }}
 								</router-link>
 							</li>
@@ -35,7 +35,16 @@
 	<router-view/>
 
 	<footer>
-		<p>Copyright year © {{ new Date().getFullYear() }}</p>
+		<p>Copyright © {{ new Date().getFullYear() }} Chinquiry</p>
+		<div class="footer-navigation">
+			<ul>
+				<li v-for="footer in routerLoop" :key="footer.path" v-if="footer.meta.footerNav">
+					<router-link :to="footer.path" exact>
+						{{ footer.name }}
+					</router-link>
+				</li>
+			</ul>
+		</div>
 	</footer>
 
 	</main>
@@ -55,7 +64,10 @@ export default {
 	},
 	watch: {
         $route(to, from) {
-            document.title = to.meta.title || 'Chinquiry - Chinchilla Care Information';
+			document.title = to.meta.title || 'Chinquiry - Chinchilla Care Information';
+			if(window.innerWidth <= 824) {
+				this.menuOpen = false
+			}
         },
     },
 	data () {
@@ -68,17 +80,24 @@ export default {
 	 		this.menuOpen = !this.menuOpen
 		},
 		winWidth() {
-			const width = window.innerWidth;
-			if (width <= 824) {
+			if (window.innerWidth <= 824) {
 				this.menuOpen = false
 			}
 		}
 	},
+	computed: {
+		routerLoop: function() {
+			return this.$router.options.routes
+		},
+		routerLoopSub: function() {
+			return this.$router.options.routes
+		}
+	},
 	mounted() {
-		this.winWidth(),
-		
-		document.querySelectorAll('.navbar-links li').addEventListener('click', function () {
-		});
+		this.winWidth,
+		this.routerLoop,
+		this.routerLoopSub,
+		console.log({router: this.$router});
 	}
 }
 </script>
