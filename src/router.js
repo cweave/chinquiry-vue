@@ -9,39 +9,59 @@ import ChinchillaToys from './components/ChinchillaToys.vue'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({	
+	mode: 'history',
 	routes: [
 		{
 			path: '/',
 			name: 'Home',
-			component: Home
+			component: Home,
+			meta: {
+				title: 'Chinchilla Care Information - Chinquiry'
+			}
 		},
 		{
 			path: '/cage-and-habitat',
 			name: 'Cage & Habitat',
 			component: CageHabitat,
+			meta: {
+				title: 'Cage & Habitat - Chinquiry'
+			},
 			children: [
 				{
 					path: '/litter-training',
 					name: 'Litter Training',
-					component: LitterTraining
+					component: LitterTraining,
+					meta: {
+						title: 'Litter Training - Chinquiry'
+					},
 				}
 			]
 		},
 		{
 			path: '/food-and-treats',
 			name: 'Food & Treats',
-			component: FoodTreats
+			component: FoodTreats,
+			meta: {
+				title: 'Food & Treats- Chinquiry'
+			},
 		},
 		{
 			path: '/dust-baths',
 			name: 'Dust Baths',
-			component: DustBath
+			component: DustBath,
+			meta: {
+				title: 'Dust Baths - Chinquiry'
+			},
 		},
 		{
 			path: '/chinchilla-toys',
 			name: 'Chinchilla Toys',
-			component: ChinchillaToys
+			component: ChinchillaToys,
+			meta: {
+				title: 'Chinchilla Toys - Chinquiry'
+			},
 		}
 	]
-})
+});
+export default router;

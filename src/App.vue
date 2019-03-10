@@ -50,6 +50,11 @@ export default {
 	components: {
 		Home
 	},
+	watch: {
+        $route(to, from) {
+            document.title = to.meta.title || 'Chinquiry - Chinchilla Care Information';
+        },
+    },
 	data () {
 		return {
 			menuOpen: true
