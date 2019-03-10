@@ -9,8 +9,13 @@
 		</header>
 
 		<div class="navbar-container">
-			<nav class="navbar navbar-desktop">
-				<ul class="navbar-links">
+			<nav class="navbar">
+				<button class="navbar-hamburger" :class="{close: menuOpen}" @click="menuOpen=!menuOpen">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<ul class="navbar-links" v-show="menuOpen">
 					<li v-for="parent in $router.options.routes" :key="parent.path">
 						<router-link :to="parent.path" exact>
 							{{ parent.name }}
@@ -25,28 +30,6 @@
 					</li>
 				</ul>
 			</nav>
-
-			<!-- TODO: refactor this bad boy -->
-			<responsive-nav class="navbar navbar-mobile">
-
-				<button class="navbar-hamburger" :class="{close: menuOpen}" @click="menuOpen=!menuOpen">
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
-
-				<ul class="navbar-links" v-show="menuOpen">
-					<li><router-link to="/" exact>Home</router-link></li>
-					<li><router-link to="/cage-and-habitat" exact>Cage &amp; Habitat</router-link>
-						<ul class="navbar-sublinks">
-							<router-link to="/cage-and-habitat" exact>Litter Training</router-link>
-						</ul>
-					</li>
-					<li><router-link to="/food-and-treats" exact>Food &amp; Treats</router-link></li>
-					<li><router-link to="/dust-baths" exact>Dust Baths</router-link></li>
-					<li><router-link to="/chinchilla-toys" exact>Chinchilla Toys</router-link></li>
-				</ul>
-			</responsive-nav>
 		</div>
 
 	<router-view/>
@@ -69,16 +52,22 @@ export default {
 	},
 	data () {
 		return {
-			menuOpen: false
+			menuOpen: true
 		}
 	},
   	methods: {
-    	toggle: function () {
-     		this.menuOpen = !this.menuOpen
-   		}
-	  },
-	   mounted() {
-      console.log({router: this.$router.options});
-    }
+		toggle: function () {
+	 		this.menuOpen = !this.menuOpen
+		},
+		winWidth: function () {
+			let w = window.innerWidth;
+			if (w <= 824) {
+				this.menuOpen = false
+			}
+		}
+	},
+	mounted() {
+		this.winWidth()
+	}
 }
 </script>

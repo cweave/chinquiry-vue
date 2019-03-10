@@ -1,7 +1,7 @@
 .navbar {
 	position: relative;
-    min-height: 75px;
-    @include flex-center;
+	min-height: 75px;
+	@include flex-center;
 
 	&-container {
 		display: block;
@@ -10,21 +10,13 @@
 		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
 	}
 
-	&-hamburger,
-	&-mobile {
+	&-hamburger {
 		display: none;
 	}
 
   	@media screen and (max-width: 824px) {
 
-		&-desktop {
-			display: none;
-		}
-
-		&-mobile {
-			display: flex;
-			justify-content: flex-start;
-		}
+		justify-content: flex-start;
 
 		&-hamburger {
 			display: inline;
@@ -97,6 +89,11 @@
 			display: inline-block;
 			position: relative;
 
+			@media screen and (max-width: 824px) {
+				display: block;
+				@include rem(padding, 4px 6px);
+			}
+
 			a {
 				text-decoration: none;
 				font-size: 1.25em;
@@ -159,60 +156,4 @@
 	&-links li:active &-sublinks {
 		display: block;
 	}
-}
-
-@media screen and (max-width: 870px) {
-  .navbar {
-
-
-    &_links {
-      float: none;
-
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      max-width: 400px;
-      margin: 0 auto;
-
-      li {
-
-        &:first-child {
-          a {
-            padding-left: 0;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 440px) {
-  .navbar {
-
-
-    &-links {
-	  //display: none;
-	  display: flex;
-      flex-direction: column;
-
-      li {
-        a {
-          padding: 10px 10px 10px 0 !important;
-        }
-      }
-    }
-
-    &-sublinks {
-      display: block;
-      position: static;
-      box-shadow: none;
-      width: 100%;
-      padding-left: 15px;
-      background-color: darken($primary-color, 5%);
-
-      li:first-child {
-        margin-top: 0;
-      }
-    }
-  }
 }

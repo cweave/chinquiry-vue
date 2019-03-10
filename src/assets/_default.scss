@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Muli:400,800,900');
 
-// general page elemts
 body {
 	margin: 0;
 	background-color: $white;
@@ -8,7 +7,7 @@ body {
 	color: $black;
 }
 
-section {		
+section {
 	margin: 0 auto;
 	max-width: 1200px;
 	padding: 2em;
@@ -17,22 +16,22 @@ section {
 footer {
 	background-color: $primary-color;
 	color: $white;
-	text-align: center;
+	height: 100%;
+	@include flex-center;
 }
 
-// headings
 h1 {
 	font-weight: 900;
-	font-size: 2em;
+	@include rem(font-size, 32px);
 	color: $primary-color;
 }
 
 h2 {
 	color: $secondary-color;
-	font-size: 1.5em;
+	@include rem(font-size, 26px);
 }
 
 h3 {
 	color: $tertiary-color;
-	font-size: 1.25em;
+	@include rem(font-size, 22px);
 }
