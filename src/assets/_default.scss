@@ -32,16 +32,18 @@ a {
 	text-decoration: none;
 	position: relative;
 
-	&:hover,
-	&:focus,
-	&:active,
-	&.router-link-exact-active,
-	&.router-link-active {
-		font-style: italic;
-		text-decoration: underline;
+	@media screen and (max-width: 824px) {
+		&:hover,
+		&:focus,
+		&:active,
+		&.router-link-exact-active,
+		&.router-link-active {
+			font-style: italic;
+			text-decoration: underline;
+		}
 	}
 
-	@media screen and (min-width: 824px) {
+	@media screen and (min-width: 825px) {
 		&:before {
 			content: "";
 			position: absolute;
@@ -63,6 +65,6 @@ a {
 		&.router-link-active {
 			visibility: visible;
 			transform: scaleX(1);
-		} 
+		}
 	}
 }

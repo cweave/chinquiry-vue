@@ -59,11 +59,13 @@ a {
   text-decoration: none;
   position: relative;
 }
-a:hover, a:focus, a:active, a.router-link-exact-active, a.router-link-active {
-  font-style: italic;
-  text-decoration: underline;
+@media screen and (max-width: 824px) {
+  a:hover, a:focus, a:active, a.router-link-exact-active, a.router-link-active {
+    font-style: italic;
+    text-decoration: underline;
+  }
 }
-@media screen and (min-width: 824px) {
+@media screen and (min-width: 825px) {
   a:before {
     content: "";
     position: absolute;
