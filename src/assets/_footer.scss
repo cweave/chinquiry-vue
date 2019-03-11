@@ -10,6 +10,7 @@ footer {
 
 		ul {
 			list-style: none;
+			padding: 0;
 
 			a {
 				@include rem(font-size, 12px);

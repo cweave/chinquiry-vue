@@ -62,7 +62,6 @@ a {
 @media screen and (max-width: 824px) {
   a:hover, a:focus, a:active, a.router-link-exact-active, a.router-link-active {
     font-style: italic;
-    text-decoration: underline;
   }
 }
 @media screen and (min-width: 825px) {
@@ -395,6 +394,7 @@ footer {
 }
 footer .footer-navigation ul {
   list-style: none;
+  padding: 0;
 }
 footer .footer-navigation ul a {
   /* 3 */

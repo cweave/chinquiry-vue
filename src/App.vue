@@ -62,22 +62,27 @@ export default {
 	components: {
 		Home
 	},
-	watch: {
-        $route(to, from) {
-			document.title = to.meta.title || 'Chinquiry - Chinchilla Care Information';
-			if(window.innerWidth <= 824) {
-				this.menuOpen = false
-			}
-        },
-    },
 	data () {
 		return {
 			menuOpen: true
 		}
 	},
+	watch: {
+        $route(to, from) {
+			document.title = to.meta.title || 'Chinquiry - Chinchilla Care Information';
+			if (window.innerWidth <= 824) {
+				this.menuOpen = false
+			}
+        },
+    },
   	methods: {
 		toggle: function () {
 	 		this.menuOpen = !this.menuOpen
+		}
+	},
+	computed: {
+		routerLoop: function() {
+			return this.$router.options.routes
 		},
 		winWidth() {
 			if (window.innerWidth <= 824) {
@@ -85,19 +90,9 @@ export default {
 			}
 		}
 	},
-	computed: {
-		routerLoop: function() {
-			return this.$router.options.routes
-		},
-		routerLoopSub: function() {
-			return this.$router.options.routes
-		}
-	},
 	mounted() {
 		this.winWidth,
-		this.routerLoop,
-		this.routerLoopSub,
-		console.log({router: this.$router});
+		this.routerLoop
 	}
 }
 </script>

@@ -4,7 +4,6 @@ import Home from './components/Home.vue'
 import CageHabitat from './components/CageHabitat.vue'
 import FoodTreats from './components/FoodTreats.vue'
 import DustBath from './components/DustBath.vue'
-import LitterTraining from './components/LitterTraining.vue'
 import ChinchillaToys from './components/ChinchillaToys.vue'
 import Disclaimer from './components/Disclaimer.vue'
 
@@ -12,6 +11,9 @@ Vue.use(Router)
 
 const router = new Router({
 	mode: 'history',
+	scrollBehavior() {
+		return { x: 0, y: 0 };
+	},
 	routes: [
 		{
 			path: '/',
@@ -30,18 +32,6 @@ const router = new Router({
 				title: 'Cage & Habitat - Chinquiry',
 				mainNav: true
 			}
-			// TODO: fix routing
-			// ,
-			// children: [
-			// 	{
-			// 		path: 'litter-training',
-			// 		name: 'Litter Training',
-			// 		component: LitterTraining,
-			// 		meta: {
-			// 			title: 'Litter Training - Chinquiry'
-			// 		},
-			// 	}
-			// ]
 		},
 		{
 			path: '/food-and-treats',
@@ -79,7 +69,7 @@ const router = new Router({
 				footerNav: true
 			},
 		}
-	]
+	],
 });
 
 export default router;
