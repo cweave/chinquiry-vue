@@ -1,6 +1,6 @@
 <template>
 	<section>
-    	<h1>Chinchilla Dust Bath</h1>
+		<h1>Chinchilla Dust Bath</h1>
 		<p>Chinchilla dust bath is an absolute necessity for chinchillas. Taking a vigorous dust bath is one of their natural behaviors, and is how chinchillas keep their lush coats clean and healthy. Because of their dense fur, chinchillas are not to get wet. They will not dry all the way through and risk the chance of bacteria growing on their skin. The dust is similar to volcanic ash found in the Andes Mountains and removes dust, bacteria, and moisture from the chinchilla’s fur, keeping them soft and silky. Dust baths are thought to be relaxing and fun for chinchillas. Chinchillas tend to really get into their baths, rolling and flipping in the dust with great enthusiasm.</p>
 
 		<h2>Dust Bath Container</h2>

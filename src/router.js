@@ -1,13 +1,13 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from './components/Home.vue'
-import CageHabitat from './components/CageHabitat.vue'
-import FoodTreats from './components/FoodTreats.vue'
-import DustBath from './components/DustBath.vue'
-import ChinchillaToys from './components/ChinchillaToys.vue'
-import Disclaimer from './components/Disclaimer.vue'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Home from './components/Home.vue';
+import CageHabitat from './components/CageHabitat.vue';
+import FoodTreats from './components/FoodTreats.vue';
+import DustBath from './components/DustBath.vue';
+import ChinchillaToys from './components/ChinchillaToys.vue';
+import Disclaimer from './components/Disclaimer.vue';
 
-Vue.use(Router)
+Vue.use(Router);
 
 const router = new Router({
 	mode: 'history',
@@ -40,7 +40,7 @@ const router = new Router({
 			meta: {
 				title: 'Food & Treats - Chinquiry',
 				mainNav: true
-			},
+			}
 		},
 		{
 			path: '/dust-baths',
@@ -49,7 +49,7 @@ const router = new Router({
 			meta: {
 				title: 'Dust Baths - Chinquiry',
 				mainNav: true
-			},
+			}
 		},
 		{
 			path: '/chinchilla-toys',
@@ -58,7 +58,7 @@ const router = new Router({
 			meta: {
 				title: 'Chinchilla Toys - Chinquiry',
 				mainNav: true
-			},
+			}
 		},
 		{
 			path: '/disclaimer',
@@ -67,9 +67,9 @@ const router = new Router({
 			meta: {
 				title: 'Disclaimer - Chinquiry',
 				footerNav: true
-			},
+			}
 		}
-	],
+	]
 });
 
 export default router;

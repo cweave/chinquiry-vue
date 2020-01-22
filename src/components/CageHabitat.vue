@@ -1,7 +1,7 @@
 <template>
 	<section>
-    	<h1>A Chinchilla's Cage</h1>
-    	<p>A chinchilla’s cage should have solid floors and ramps. The larger the cage, the better. The recommended chinchilla cage has a minimum floor space of about 24 by 24 inches, and the taller the cage, the better. A tall chinchilla cage with shelves and ladders allow the chinchilla to climb is best for activity. Wire is the best cage material as it cannot be chewed easily.</p>
+		<h1>A Chinchilla's Cage</h1>
+		<p>A chinchilla’s cage should have solid floors and ramps. The larger the cage, the better. The recommended chinchilla cage has a minimum floor space of about 24 by 24 inches, and the taller the cage, the better. A tall chinchilla cage with shelves and ladders allow the chinchilla to climb is best for activity. Wire is the best cage material as it cannot be chewed easily.</p>
 
 		<h2>Cage Bedding</h2>
 		<p>Many chinchilla cages have a wire floor, which is nice for cleanliness but can be hard on chinchilla's feet. These are best avoided. Wire floors or shelves can be covered with wood or plastic to avoid injuries. The tray can be lined with wood shavings (avoid cedar shavings, and hardwood shavings such as aspen are preferred over pine), recycled paper such as Care Fresh brand, or newspapers. Bedding should be changed at least once a week.</p>

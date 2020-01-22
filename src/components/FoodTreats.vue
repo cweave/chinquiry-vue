@@ -12,7 +12,7 @@
 			<li>Vegetables or vegetable products (fresh or dried)</li>
 			<li>Fillers (corn, soy, etc.)</li>
 		</ul>
-			
+
 		<p>Pellets such as Oxbow Essentials (<u>not</u> the "Garden Select" version), Manna Pro Sho, Mazuri Chinchilla pellets, and Purina Rabit Chow are high-quality pellets available for your chinchilla. Typically avoid </p>
 
 		<h3>Switching Pellets</h3>

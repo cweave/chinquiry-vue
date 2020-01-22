@@ -1,6 +1,6 @@
 <template>
 	<section>
-    	<h1>Litter Training Your Chinchilla</h1>
+		<h1>Litter Training Your Chinchilla</h1>
 		<p>The younger you begin litter training your chinchilla, the easier they will pick it up. That all just depends on your chinchilla, though. I litter trained my chinchillas when they were both about a year old and it took a day or two for them to learn. Here’s some tips to litter train your chinchilla:</p>
 
 		<ol>

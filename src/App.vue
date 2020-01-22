@@ -32,67 +32,75 @@
 			</nav>
 		</div>
 
-	<router-view/>
+		<router-view/>
 
-	<footer>
-		<p>Copyright © {{ new Date().getFullYear() }} Chinquiry</p>
-		<div class="footer-navigation">
-			<ul>
-				<li v-for="footer in routerLoop" :key="footer.path" v-if="footer.meta.footerNav">
-					<router-link :to="footer.path" exact>
-						{{ footer.name }}
-					</router-link>
-				</li>
-			</ul>
-		</div>
-	</footer>
+		<footer>
+			<p>Copyright © {{ new Date().getFullYear() }} Chinquiry</p>
+			<div class="footer-navigation">
+				<ul>
+					<li v-for="footer in routerLoop" :key="footer.path" v-if="footer.meta.footerNav">
+						<router-link :to="footer.path" exact>
+							{{ footer.name }}
+						</router-link>
+					</li>
+				</ul>
+			</div>
+		</footer>
 
 	</main>
 </template>
 
 <script>
-import Home from './components/Home.vue'
-import '@/assets/styles.css';
+	import Home from './components/Home.vue';
+	import '@/assets/styles.css';
 
-export default {
-	name: 'app',
-	created () {
-		document.title = 'Chinquiry - Chinchilla Care Information'
-	},
-	components: {
-		Home
-	},
-	data () {
-		return {
-			menuOpen: true
-		}
-	},
-	watch: {
-        $route(to, from) {
-			document.title = to.meta.title || 'Chinquiry - Chinchilla Care Information';
-			if (window.innerWidth <= 824) {
-				this.menuOpen = false
-			}
-        },
-    },
-  	methods: {
-		toggle: function () {
-	 		this.menuOpen = !this.menuOpen
-		}
-	},
-	computed: {
-		routerLoop: function() {
-			return this.$router.options.routes
+	export default {
+		name: 'app',
+		created() {
+			document.title = 'Chinquiry - Chinchilla Care Information';
+
+			window.addEventListener('resize', this.checkForWidthChange);
+			this.handleResize();
 		},
-		winWidth() {
-			if (window.innerWidth <= 824) {
-				this.menuOpen = false
+		components: {
+			Home
+		},
+		data() {
+			return {
+				menuOpen: true,
+				windowWidth: window.innerWidth
+			};
+		},
+		watch: {
+			// eslint-disable-next-line
+			$route(to, from) {
+				document.title = to.meta.title || 'Chinquiry - Chinchilla Care Information';
+				if (window.innerWidth <= 824) {
+					this.menuOpen = false;
+				}
+			}
+		},
+		methods: {
+			toggle() {
+				this.menuOpen = !this.menuOpen;
+			},
+			checkForWidthChange() {
+				if (window.innerWidth !== this.windowWidth)
+					this.handleResize();
+			},
+			handleResize() {
+				if (window.innerWidth <= 824) {
+					this.menuOpen = false;
+				}
+				else {
+					this.menuOpen = true;
+				}
+			}
+		},
+		computed: {
+			routerLoop() {
+				return this.$router.options.routes;
 			}
 		}
-	},
-	mounted() {
-		this.winWidth,
-		this.routerLoop
-	}
-}
+	};
 </script>

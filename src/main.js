@@ -1,17 +1,19 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import VueAnalytics from 'vue-analytics'
+import Vue from 'vue';
+import VueAnalytics from 'vue-analytics';
+import App from './App.vue';
+import router from './router';
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 Vue.use(VueAnalytics, {
 	id: 'UA-61317148-5',
 	router
-})
+});
 
+// eslint-disable-next-line no-new
 new Vue({
-  el: '#app',
-  router,
-  render: h => h(App)
-})
+	el: '#app',
+	router,
+	render: h => h(App),
+	mounted: () => document.dispatchEvent(new Event('x-app-rendered'))
+});

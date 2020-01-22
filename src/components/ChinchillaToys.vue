@@ -8,12 +8,12 @@
 
 		<h3>Safe Woods:</h3>
 		<ul>
-			<li v-for="wood in safeWoods">{{ wood }}</li>
+			<li v-for="wood in safeWoods" :key="wood.id">{{ wood }}</li>
 		</ul>
 
 		<h3>Hazardous Woods</h3>
 		<ul>
-			<li v-for="wood in hazardousWoods">{{ wood }}</li>
+			<li v-for="wood in hazardousWoods" :key="wood.id">{{ wood }}</li>
 		</ul>
 
 		<h2>Other Safe Toys</h2>
@@ -22,19 +22,19 @@
 </template>
 
 <script>
-export default {
-	data() {
-		return {
-			safeWoods:
-			[
-				'Wood from fruit baring trees (apple, grape, pear, etc.)', 'Aspen', 'Cottonwood', 'Crabapple', 'Poplar', 'Willow'
-			],
-			hazardousWoods:
-			[
-				'Wood from fruit trees with seeds/pits (cherry, peaches, etc.)', 'Cedar', 'Chesnut', 'Citrus fruit trees (lemon, orange, grapefruit, etc.)', 'Evergreen', 'Fir', 'Redwood'
-			]
+	export default {
+		data() {
+			return {
+				safeWoods:
+					[
+						'Wood from fruit baring trees (apple, grape, pear, etc.)', 'Aspen', 'Cottonwood', 'Crabapple', 'Poplar', 'Willow'
+					],
+				hazardousWoods:
+					[
+						'Wood from fruit trees with seeds/pits (cherry, peaches, etc.)', 'Cedar', 'Chesnut', 'Citrus fruit trees (lemon, orange, grapefruit, etc.)', 'Evergreen', 'Fir', 'Redwood'
+					]
+			};
 		}
-	}
-};
+	};
 
 </script>
