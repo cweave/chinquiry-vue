@@ -1,15 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './components/Home.vue';
-import CageHabitat from './components/CageHabitat.vue';
-import FoodTreats from './components/FoodTreats.vue';
-import DustBath from './components/DustBath.vue';
-import ChinchillaToys from './components/ChinchillaToys.vue';
-import Disclaimer from './components/Disclaimer.vue';
 
 Vue.use(Router);
 
-const router = new Router({
+export default new Router({
 	mode: 'history',
 	scrollBehavior() {
 		return { x: 0, y: 0 };
@@ -18,7 +12,7 @@ const router = new Router({
 		{
 			path: '/',
 			name: 'Home',
-			component: Home,
+			component: () => import(/* webpackChunkName: 'Home' */ '@/views/Home'),
 			meta: {
 				title: 'Chinchilla Care Information - Chinquiry',
 				mainNav: true
@@ -27,7 +21,7 @@ const router = new Router({
 		{
 			path: '/cage-and-habitat',
 			name: 'Cage & Habitat',
-			component: CageHabitat,
+			component: () => import(/* webpackChunkName: 'CageHabitat' */ '@/views/CageHabitat'),
 			meta: {
 				title: 'Cage & Habitat - Chinquiry',
 				mainNav: true
@@ -36,7 +30,7 @@ const router = new Router({
 		{
 			path: '/food-and-treats',
 			name: 'Food & Treats',
-			component: FoodTreats,
+			component: () => import(/* webpackChunkName: 'FoodTreats' */ '@/views/FoodTreats'),
 			meta: {
 				title: 'Food & Treats - Chinquiry',
 				mainNav: true
@@ -45,7 +39,7 @@ const router = new Router({
 		{
 			path: '/dust-baths',
 			name: 'Dust Baths',
-			component: DustBath,
+			component: () => import(/* webpackChunkName: 'DustBath' */ '@/views/DustBath'),
 			meta: {
 				title: 'Dust Baths - Chinquiry',
 				mainNav: true
@@ -54,7 +48,7 @@ const router = new Router({
 		{
 			path: '/chinchilla-toys',
 			name: 'Chinchilla Toys',
-			component: ChinchillaToys,
+			component: () => import(/* webpackChunkName: 'ChinchillaToys' */ '@/views/ChinchillaToys'),
 			meta: {
 				title: 'Chinchilla Toys - Chinquiry',
 				mainNav: true
@@ -63,7 +57,7 @@ const router = new Router({
 		{
 			path: '/disclaimer',
 			name: 'Disclaimer',
-			component: Disclaimer,
+			component: () => import(/* webpackChunkName: 'Disclaimer' */ '@/views/Disclaimer'),
 			meta: {
 				title: 'Disclaimer - Chinquiry',
 				footerNav: true
@@ -71,5 +65,3 @@ const router = new Router({
 		}
 	]
 });
-
-export default router;
