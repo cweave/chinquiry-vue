@@ -19,5 +19,11 @@ new Vue({
 	created() {
 		const html = document.documentElement;
 		html.setAttribute('lang', 'en-US');
+
+		const head = document.getElementsByTagName('head')[0];
+		const meta = document.createElement('meta');
+		meta.name = 'google-site-verification';
+		meta.content = 'Y6SSRQxXVSmzHiivX7bT-Z-r-9bM-baVBgP9ch4pM3k';
+		head.appendChild(meta);
 	}
 });
