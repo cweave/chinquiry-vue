@@ -14,24 +14,14 @@
 			<router-view class="body-fade" />
 		</transition>
 
-		<footer>
-			<p>Copyright © {{ new Date().getFullYear() }} Chinquiry</p>
-			<div class="footer-navigation">
-				<ul>
-					<li v-for="footer in routerLoop" :key="footer.path" v-if="footer.meta.footerNav">
-						<router-link :to="footer.path" exact>
-							{{ footer.name }}
-						</router-link>
-					</li>
-				</ul>
-			</div>
-		</footer>
+		<app-footer />
 
 	</main>
 </template>
 
 <script>
 	import Home from './views/Home.vue';
+	import AppFooter from './components/Footer.vue';
 	import NavBar from './components/NavBar.vue';
 	import '@/assets/styles.css';
 
@@ -39,6 +29,7 @@
 		name: 'app',
 		components: {
 			Home,
+			AppFooter,
 			NavBar
 		},
 		created() {

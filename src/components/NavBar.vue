@@ -7,7 +7,7 @@
 				<span></span>
 			</button>
 			<ul class="navbar-links" v-show="menuOpen">
-				<li v-for="parent in routerLoop" :key="parent.path" v-if="parent.meta.mainNav">
+				<li v-for="parent in navigationItems" :key="parent.path">
 					<router-link :to="parent.path" exact>
 						{{ parent.name }}
 					</router-link>
@@ -31,7 +31,8 @@
 		data() {
 			return {
 				menuOpen: true,
-				windowWidth: window.innerWidth
+				windowWidth: window.innerWidth,
+				routes: this.$router.options.routes
 			};
 		},
 		created() {
@@ -50,8 +51,9 @@
 			}
 		},
 		computed: {
-			routerLoop() {
-				return this.$router.options.routes;
+			navigationItems() {
+				const result = this.routes.filter(e => e.meta.mainNav === true);
+				return result;
 			}
 		},
 		methods: {
